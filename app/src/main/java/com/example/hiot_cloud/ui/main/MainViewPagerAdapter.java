@@ -1,10 +1,9 @@
-package com.example.hiot_cloud.main;
+package com.example.hiot_cloud.ui.main;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
-import androidx.viewpager.widget.PagerAdapter;
 
 import com.example.hiot_cloud.utils.Constans;
 
@@ -20,18 +19,23 @@ public class MainViewPagerAdapter extends FragmentPagerAdapter {
     @Override
     public Fragment getItem(int position) {
         Fragment fragment =null;
+        fragment=EquipmentFragment.newInstance();
         switch (position) {
             case Constans.MAIN_VIEWPAGER_TDEX_MESSAGE:
                 //创建消息Frament todo
+                fragment=MessageFragment.newInstance();
                 break;
             case Constans.MAIN_VIEWPAGER_TDEX_EQUIPMENT:
                 //创建设备Frament
+                fragment=EquipmentFragment.newInstance();
                 break;
             case Constans.MAIN_VIEWPAGER_TDEX_SCENE:
                 //创建场景Frament
+                fragment=SceneFragment.newInstance();
                 break;
             case Constans.MAIN_VIEWPAGER_TDEX_MINE:
                 //创建我的Frament
+                fragment=MineFragment.newInstance();
                 break;
             default:
         }
